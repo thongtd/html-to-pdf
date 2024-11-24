@@ -1,0 +1,39 @@
+﻿@model IEnumerable<html_to_pdf.Models.OrderModel>
+<!DOCTYPE html>
+<html>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    .sub-content {
+        background-color: orange;
+    }
+</style>
+<body>
+    <h1>Order Report</h1>
+    <p class="sub-content">
+        HTML tables allow web developers to arrange data into rows and columns.
+    </p>
+
+    <table style="width: 100%">
+        <tr>
+            <th>Order Id</th>
+            <th>Customer Name</th>
+            <th>Total Price</th>
+            <th>Order Date</th>
+        </tr>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.OrderId</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.TotalPrice</td>
+                    <td>@item.OrderDate</td>
+                </tr>
+            }
+        }
+    </table>
+</body>
+</html>
